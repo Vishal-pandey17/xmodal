@@ -48,27 +48,29 @@ function App() {
     <div>
       <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
          <h1>User Details Modal</h1>
-         <button onClick={openModal} id="open-button">Open Form</button>
+         <button onClick={openModal}>Open Form</button>
       </div>
       {isOpen && (
         <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2>Fill the Form</h2>
-            <form onSubmit={handleSubmit}>
-              <label>Username:</label>
-              <input id="username" value={formData.username} onChange={handleChange} required />
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-content">
+              <h2>Fill the Form</h2>
+              <form onSubmit={handleSubmit}>
+                <label>Username:</label>
+                <input id="username" value={formData.username} onChange={handleChange} required />
 
-              <label>Email:</label>
-              <input id="email" type="email" value={formData.email} onChange={handleChange} required />
+                <label>Email:</label>
+                <input id="email" type="email" value={formData.email} onChange={handleChange} required />
 
-              <label>Phone Number:</label>
-              <input id="phone" type="text" value={formData.phone} onChange={handleChange} required />
+                <label>Phone Number:</label>
+                <input id="phone" type="text" value={formData.phone} onChange={handleChange} required />
 
-              <label>Date of Birth:</label>
-              <input id="dob" type="date" value={formData.dob} onChange={handleChange} required />
+                <label>Date of Birth:</label>
+                <input id="dob" type="date" value={formData.dob} onChange={handleChange} required />
 
-              <button type="submit" className="submit-button">Submit</button>
-            </form>
+                <button type="submit" className="submit-button">Submit</button>
+              </form>
+            </div>
           </div>
         </div>
       )}
